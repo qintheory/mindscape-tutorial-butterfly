@@ -39,7 +39,7 @@ d3.json("data/web.json").then(function(links) {
         charge = d3.forceCollide().radius(-5),
         attract = d3.forceManyBody().strength(2),
         center = d3.forceCenter(width/2, height/2),
-        collide = d3.forceCollide().radius(25).iterations(5),
+        collide = d3.forceCollide().radius(35).iterations(5),
         link = d3.forceLink(links).distance(5);
      
     var simulation = d3.forceSimulation(nNodes).alphaTarget(0.5).velocityDecay(0.6)
@@ -116,7 +116,7 @@ d3.json("data/web.json").then(function(links) {
         }
         
         l = Math.sqrt(dx * dx + r * r);   
-        let tearWidth = 1.03;
+        let tearWidth = 1.13;
         let path = 
         `M ${d.target.x} ${d.target.y}, 
         Q ${xPad*tearWidth} ${yPad*tearWidth}, ${d.source.x} ${d.source.y}, 
